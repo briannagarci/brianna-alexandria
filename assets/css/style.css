@@ -167,7 +167,7 @@ header {
     align-items: center;
     right: 0px;
     height: 92vh;
-    top: vh;
+    
     background-color: #ffffff;
     width: 50%;
     transform: translate(100%); 
@@ -477,21 +477,58 @@ header nav li {
 
 /* START HOVER EFFECT STYLES*/
 
+.cover {
+  background-color: red;
+  margin: 10px;
+  position: relative;
+  overflow-x: hidden;
+}
 
-.cover1:hover {
-cursor: pointer;
-opacity: 0.5;
+.cover:hover {
+  cursor: pointer;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;  
+  position: relative;
+  transform: translateX(-100%);
+  background-color: #78D8DA;
+  opacity: .90;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+.overlay a {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.overlay h3 {
+  font-size: 25px;
+}
+
+.overlay span {
+  font-size: 15px;
+  font-weight: initial;
+}
+
+.overlay-animation {
+  animation: slideIn .5s ease-out;
+  animation-fill-mode: forwards;
 }
 
 .cover2 {
-  cursor: pointer;
   background-repeat: no-repeat;
   background-size: 359px 321px;
   position: relative
 }
 
 .cover3 {
-  cursor: pointer;
   background-repeat: no-repeat;
   background-size: 359px 321px;
   position: relative
@@ -506,6 +543,10 @@ opacity: 0.5;
   background-clip:content-box;
   background-size: cover;
   background-position: center;
+}
+
+.small {
+  padding: 0 !important;
 }
 
 .portfolio .grid li.small {
@@ -529,6 +570,9 @@ opacity: 0.5;
   }
 }
 @media (max-width: 800px) {
+    .cover {
+      
+    }
     .portfolio .grid li.small {
       flex-basis: 100%;
     }
@@ -666,7 +710,7 @@ opacity: 0.5;
 
 
 
-@media (max-width: 1000px){
+@media (max-width: 1000px) {
   .contact {
     flex-basis: 100%;
     margin: 0 0 0px 0;
@@ -735,8 +779,7 @@ footer p.phone{
   display: block;
 }
 
-@media (max-width: 1100px) 
-{
+@media (max-width: 1100px) {
   footer p.phone{
       display: none;
   }
@@ -746,8 +789,7 @@ footer p.email{
   display: block;
 }
 
-@media (max-width: 1100px) 
-{
+@media (max-width: 1100px) {
   footer p.email{
       display: none;
   }
@@ -756,8 +798,7 @@ footer p.resume{
   display: block;
 }
 
-@media (max-width: 1100px) 
-{
+@media (max-width: 1100px) {
   footer p.resume{
       display: none;
   }
@@ -767,9 +808,17 @@ footer span {
   display: block;
 }
 
-@media (max-width: 1100px) 
-{
+@media (max-width: 1100px) {
   footer span {
       display: none;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
