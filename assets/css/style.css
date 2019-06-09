@@ -759,7 +759,7 @@ footer p.resume{
 @media (max-width: 1100px) 
 {
   footer p.resume{
-     /* display: none;*/
+      display: none;
   }
 }
 
